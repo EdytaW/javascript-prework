@@ -15,22 +15,6 @@ function playGame(playerInput) {
     }
 
 
-    function getMoveName(argPlayerMove) {
-        if (argPlayerMove == 1) {
-            return 'kamień';
-        } else if (argPlayerMove == 2) {
-            return 'papier';
-        } else if (argPlayerMove == 3) {
-            return 'nożyce';
-        } else {
-            printMessage('Nie znam ruchu o id ' + argPlayerMove + '.');
-            return 'nieznany ruch';
-        }
-    }
-
-
-
-
     function printMessage(msg) {
         let div = document.createElement('div');
         div.innerHTML = msg;
@@ -79,19 +63,17 @@ function playGame(playerInput) {
 
     function displayResult(argComputerMove, argPlayerMove) {
 
-        if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
+        if (computerMove == 'kamień' && playerMove == 'papier') {
             printMessage('Ty wygrywasz!');
-        } else if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
+        } else if (computerMove == 'papier' && playerMove == 'kamień') {
             printMessage('Wygrywa komputer!');
-        }
-
-        if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
-            printMessage('Wygrywa komputer');
-        } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
+        } else if (computerMove == 'papier' && playerMove == 'nożyce') {
             printMessage('Ty wygrywasz!');
-        }
-
-        if (argComputerMove == argPlayerMove) {
+        } else if (computerMove == 'kamień' && playerMove == 'nożyce') {
+            printMessage('Wygrywa komputer');
+        } else if (computerMove == 'nożyce' && playerMove == 'kamień') {
+            printMessage('Ty wygrywasz!');
+        } else if (computerMove == playerMove) {
             printMessage('Remis');
         }
     }
