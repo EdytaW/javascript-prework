@@ -62,12 +62,14 @@
                 printMessage('Wygrywa komputer');
             } else if (computerMove == 'nożyce' && playerMove == 'kamień') {
                 printMessage('Ty wygrywasz!');
+            } else if (computerMove == 'nożyce' && playerMove == 'papier') {
+                printMessage('Wygrywa komputer');
             } else if (computerMove == playerMove) {
                 printMessage('Remis');
             }
         }
 
-        printMessage('Result:' + displayResult(computerMove, playerMove));
+        displayResult(computerMove, playerMove);
 
     }
 
